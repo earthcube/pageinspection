@@ -12,7 +12,7 @@ Learn more about BAML at: https://docs.boundaryml.com/guide/installation-languag
 
 You will need to set your OpenAI key
 
-```json
+```bash
 export OPENAI_API_KEY="myKeyToTheAIOverlord"
 ```
 
@@ -28,6 +28,6 @@ The ExtractPage is for a general information page.
 
 run with:
 
-```json
+```bash
 python main.py
 ```
