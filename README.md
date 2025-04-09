@@ -2,7 +2,11 @@
 
 ## About
 
-Some work inspired by Dave's demo last week.  
+Some work inspired by Dave's demo last week.  The code in here is to see if 
+we can read a web page into markdown and then feed it into BAML with a 
+defined class to align the output to.  The final goal is to see if we can generate
+JSON-LD schema.org documents for web pages.  
+
 
 ## Notes
 
