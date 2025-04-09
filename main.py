@@ -41,11 +41,12 @@ async def main():
 
   async with AsyncWebCrawler() as crawler:
       result = await crawler.arun(
-          url="https://www.waterqualitydata.us"
-          # url="https://www.hydrosheds.org/hydrosheds-core-downloads",
+          # url="https://www.waterqualitydata.us"
+          url="https://www.hydrosheds.org/hydrosheds-core-downloads",
       )
       # print(result.markdown)
-  r = example4Page(result.markdown)  # or example4Datapage
+  # r = example4Page(result.markdown)  # or example4Datapage
+  r = example4Datapage(result.markdown)
   print(r)
 
 

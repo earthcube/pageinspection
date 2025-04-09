@@ -8,13 +8,23 @@ client<llm> CustomGemini {
   }
 }
 
-// client<llm> CustomXAI {
-//   provider x-ai
-//   options {
-//     model "gemini-1.5-pro"
-//     api_key env.XAI_API_KEY
-//   }
-// }
+client<llm> LocalQwen {
+  provider "openai-generic"
+  options {
+    base_url "http://192.168.202.88:11434/v1"
+    model qwen2.5-coder:14b
+  }
+}
+
+client<llm> LocalGemma {
+  provider "openai-generic"
+  options {
+    base_url "http://192.168.202.88:11434/v1"
+    model gemma3:12b
+    max_tokens null
+  }
+}
+
 
 client<llm> CustomGPT4o {
   provider openai

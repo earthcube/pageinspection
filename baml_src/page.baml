@@ -23,8 +23,9 @@ class PotentialAction {
 function ExtractPage(page: string) -> Page {
   // Specify a client as provider/model-name
   // you can use custom LLM params with a custom client name from clients.baml like "client CustomHaiku"
-  client "openai/gpt-4o" // Set OPENAI_API_KEY to use this client.
-  // client "google-ai/gemini-1.5-pro" 
+  client "LocalGemma"                  // use the custom client name with ollama
+  // client "openai/gpt-4o"            // Set OPENAI_API_KEY to use this client.
+  // client "google-ai/gemini-1.5-pro" // Set GEMINI_API_KEY to use this client.
   prompt #"
 
 Extract from the page the elements to populate the schema.
