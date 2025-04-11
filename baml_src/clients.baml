@@ -21,7 +21,6 @@ client<llm> LocalGemma {
   options {
     base_url "http://192.168.202.88:11434/v1"
     model gemma3:12b
-    max_tokens null
   }
 }
 

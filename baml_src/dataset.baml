@@ -14,21 +14,21 @@ class Links {
 function ExtractDataset(pagecontent: string) -> Links {
   // Specify a client as provider/model-name
   // you can use custom LLM params with a custom client name from clients.baml like "client CustomHaiku"
-  client "LocalGemma"                  // use the custom client name with ollama
-  // client "openai/gpt-4o" // Set OPENAI_API_KEY to use this client.
-  // client "google-ai/gemini-1.5-pro" 
-  // client "CustomGemini"
+  //client "LocalGemma"                  // use the custom client name with ollama
+  //client "CustomGemini"
+    client CustomGPT4o
   prompt #"
 
-    Look for lines in the following content for:
+    In the Downloads section of the markdown there are 144 distributions with 
+    links that end with .zip
+
+    Extract and generate the content for these matching
+
     * resolution
     * file size 
     * URL
 
-    Only look at lines with the phase ".zip" in them and make sure they get linked as distributions
-
-    Extract download links from this content, there will likely 
-    be many.
+    Ensure there are 144. Don't give up till you find them all.
 
     {{ pagecontent }}
 
