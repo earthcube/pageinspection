@@ -1,5 +1,14 @@
 // Learn more about clients at https://docs.boundaryml.com/docs/snippets/clients/overview
 
+client<llm> XAI {
+  provider openai-generic
+  options {
+    model grok-3-mini-beta
+    base_url "https://api.x.ai/v1"
+    api_key env.XAI_API_KEY
+  }
+}
+
 client<llm> CustomGemini {
   provider google-ai
   options {

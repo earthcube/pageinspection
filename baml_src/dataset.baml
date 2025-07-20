@@ -14,9 +14,9 @@ class Links {
 function ExtractDataset(pagecontent: string) -> Links {
   // Specify a client as provider/model-name
   // you can use custom LLM params with a custom client name from clients.baml like "client CustomHaiku"
-  //client "LocalGemma"                  // use the custom client name with ollama
+  client "XAI"                  // use the custom client name with ollama
   //client "CustomGemini"
-    client CustomGPT4o
+  //client CustomGPT4o
   prompt #"
 
     In the Downloads section of the markdown there are 144 distributions with 

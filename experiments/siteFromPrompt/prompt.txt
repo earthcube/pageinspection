@@ -1,0 +1,55 @@
+You are a data scientist who wants to generate schema.org content for a website with datasets.
+A description of a science on schema which uses a jsonld encoding is here (link to sos )
+
+These are suggested properties of schema.org we should conform to:
+Schema,org website page
+Schema,org datacatalog page
+Schema.org dataset page
+Schema,org org page
+Schema,org datadownload page
+Schema,org spatial page
+Schema,org temporal page
+These should use jsonld
+
+The site is https://www.hydrosheds.org
+
+This needs to be described with a WebSite schema.org with a title, and the an Org type, etc
+The @id should be url of the website
+
+There are groups listed on the site. For example, this link describes, blank
+The @id should be link to a page
+
+Each group is a schema.org DataCatalog
+When selected each page has a listing  of data
+Where each item should be described as a dataset.
+The datacatalog  needs to have a title
+If there is a description for the datacatalog , that should put in the description
+If there is a description see if you cannot pull out keywords and put them in keywords.
+
+These datasets should be linked to a datacatalog parent
+
+You would like to describe each dataset with a name if possible, if not, then the name should be the file name. The @id should be link to a file
+The link to the file will will be a distribution described by a datadownload.
+
+
+Read the page, and list the groups
+
+(Us pick one group) what are the title, description and keywords
+(Confirm, refine)
+list the datasets
+
+Describe 5 with (some) properties
+(Confirm refine)
+
+For each group generate (above)
+
+(Confirm)
+
+Generate jsonld website
+(Confirm)
+generate datacatalog jsonld and validate
+
+Generate datasets and validate
+
+
+

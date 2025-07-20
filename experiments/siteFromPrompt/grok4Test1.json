@@ -1,0 +1,466 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.hydrosheds.org",
+      "name": "HydroSHEDS",
+      "description": "Seamless hydrographic data for global and regional applications",
+      "url": "https://www.hydrosheds.org",
+      "publisher": {
+        "@id": "https://www.hydrosheds.org/about"
+      },
+      "hasPart": [
+        {
+          "@id": "https://www.hydrosheds.org/products#core-header"
+        },
+        {
+          "@id": "https://www.hydrosheds.org/products#secondary-header"
+        },
+        {
+          "@id": "https://www.hydrosheds.org/products#associated-header"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.hydrosheds.org/about",
+      "name": "HydroSHEDS",
+      "description": "The HydroSHEDS project, initiated in 2006 by World Wildlife Fund US, aims to create free digital data layers in support of large-scale hydro-ecological research and applications worldwide. It provides seamless hydrographic data products including catchment boundaries, river networks, and lakes, consistent across multiple scales and resolutions for regional and global hydro-environmental modeling and freshwater conservation efforts. The data suite includes core, secondary, and associated products derived from or co-registered to HydroSHEDS core data layers.",
+      "foundingDate": "2006",
+      "founder": {
+        "@type": "Organization",
+        "name": "World Wildlife Fund US"
+      },
+      "sameAs": [
+        "https://www.hydrosheds.org/products",
+        "https://www.hydrosheds.org/hydrosheds-v2"
+      ]
+    },
+    {
+      "@type": "DataCatalog",
+      "@id": "https://www.hydrosheds.org/products#core-header",
+      "name": "Core Products",
+      "description": "The core data products of HydroSHEDS are a series of gridded datasets designed for use in hydro-environmental model development and custom GIS applications. Data layers include the original digital elevation model (DEM), a hydrologically conditioned version of the DEM, the derived flow direction and flow accumulation grids, as well as land mask and sink grids. These data products form the digital foundation of the derived secondary data products. HydroSHEDS core data products are currently available for HydroSHEDS v1 only, which is mostly based on SRTM elevation data. HydroSHEDS v2, which is derived from TanDEM-X elevation data, is currently under development with the first product release scheduled for 2025.",
+      "keywords": "gridded datasets, elevation, flow directions, flow accumulation, DEM, hydrologically conditioned, land mask, sink grids, hydro-environmental model, GIS applications, SRTM, TanDEM-X",
+      "provider": {
+        "@id": "https://www.hydrosheds.org/about"
+      }
+      // Note: Datasets for core not fully detailed due to insufficient download links; can be added similarly if more data is obtained
+    },
+    {
+      "@type": "DataCatalog",
+      "@id": "https://www.hydrosheds.org/products#secondary-header",
+      "name": "Secondary Products",
+      "description": "The HydroSHEDS secondary products are a suite of pre-processed hydrographic map layers which are derived from the HydroSHEDS core products and complementary data sources. These products include three vectorized map products that offer delineations for the main hydrographic feature types: sub-basin boundaries (HydroBASINS), river reaches (HydroRIVERS), and lake shorelines (HydroLAKES). These products provide globally consistent feature geometry (as lines and polygons), as well as topologic information to allow for the identification of upstream or downstream connections. The final and most comprehensive product is the HydroATLAS database, which provides a broad range of hydro-environmental attributes for the same three datasets of sub-basins, rivers, and lakes.",
+      "keywords": "pre-processed, hydrographic map layers, vectorized, sub-basin boundaries, HydroBASINS, river reaches, HydroRIVERS, lake shorelines, HydroLAKES, feature geometry, topologic information, upstream, downstream, HydroATLAS, hydro-environmental attributes",
+      "provider": {
+        "@id": "https://www.hydrosheds.org/about"
+      },
+      "dataset": [
+        {
+          "@id": "https://www.hydrosheds.org/products/hydrobasins"
+        },
+        {
+          "@id": "https://www.hydrosheds.org/products/hydrorivers"
+        },
+        {
+          "@id": "https://www.hydrosheds.org/products/hydrolakes"
+        },
+        {
+          "@id": "https://www.hydrosheds.org/products/hydroatlas"
+        }
+      ]
+    },
+    {
+      "@type": "DataCatalog",
+      "@id": "https://www.hydrosheds.org/products#associated-header",
+      "name": "Associated Products",
+      "description": "Associated data products are independent, complementary hydrographic datasets which are co-registered to and/or utilize some of the other HydroSHEDS data products, making them fully compatible within the larger HydroSHEDS data framework.",
+      "keywords": "independent, complementary, hydrographic datasets, co-registered, compatible, HydroSHEDS data framework",
+      "provider": {
+        "@id": "https://www.hydrosheds.org/about"
+      }
+      // Note: No specific datasets listed on the site; can be updated if more information is available
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://www.hydrosheds.org/products/hydrobasins",
+      "name": "HydroBASINS",
+      "description": "HydroBASINS represents a series of vectorized polygon layers that depict sub-basin boundaries at a global scale. The goal of this product is to provide a seamless global coverage of consistently sized and hierarchically nested sub-basins at different scales (from tens to millions of square kilometers), supported by a coding scheme that allows for analysis of catchment topology such as up- and downstream connectivity. HydroBASINS has been extracted from the gridded HydroSHEDS core layers at 15 arc-second resolution. It includes 1.0 million individual sub-basin polygons with an average area of 130.6 km², covering 135.0 million km² of global land area (excluding Antarctica).",
+      "keywords": "sub-basins, river basins, hydrology, geospatial, Pfafstetter coding, catchment topology",
+      "version": "v1c",
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "Global (excluding Antarctica)",
+        "geo": {
+          "@type": "GeoShape",
+          "box": "-180 -90 180 90"
+        }
+      },
+      "license": "https://data.hydrosheds.org/file/technical-documentation/HydroSHEDS_TechDoc_v1_4.pdf",
+      "citation": "Lehner, B., Grill G. (2013). Global river hydrography and network routing: baseline data and new approaches to study the world’s large river systems. Hydrological Processes, 27(15): 2171–2186. https://doi.org/10.1002/hyp.9740",
+      "includedInDataCatalog": {
+        "@id": "https://www.hydrosheds.org/products#secondary-header"
+      },
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "name": "Africa Standard",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrobasins/standard/hybas_af_lev01-12_v1c.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Arctic Standard",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrobasins/standard/hybas_ar_lev01-12_v1c.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Asia Standard",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrobasins/standard/hybas_as_lev01-12_v1c.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Australia Standard",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrobasins/standard/hybas_au_lev01-12_v1c.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Europe Standard",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrobasins/standard/hybas_eu_lev01-12_v1c.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Greenland Standard",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrobasins/standard/hybas_gr_lev01-12_v1c.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "North America Standard",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrobasins/standard/hybas_na_lev01-12_v1c.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "South America Standard",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrobasins/standard/hybas_sa_lev01-12_v1c.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Siberia Standard",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrobasins/standard/hybas_si_lev01-12_v1c.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Africa Customized (with lakes)",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrobasins/customized_with_lakes/hybas_lake_af_lev01-12_v1c.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Arctic Customized (with lakes)",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrobasins/customized_with_lakes/hybas_lake_ar_lev01-12_v1c.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Asia Customized (with lakes)",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrobasins/customized_with_lakes/hybas_lake_as_lev01-12_v1c.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Australia Customized (with lakes)",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrobasins/customized_with_lakes/hybas_lake_au_lev01-12_v1c.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Europe Customized (with lakes)",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrobasins/customized_with_lakes/hybas_lake_eu_lev01-12_v1c.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Greenland Customized (with lakes)",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrobasins/customized_with_lakes/hybas_lake_gr_lev01-12_v1c.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "North America Customized (with lakes)",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrobasins/customized_with_lakes/hybas_lake_na_lev01-12_v1c.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "South America Customized (with lakes)",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrobasins/customized_with_lakes/hybas_lake_sa_lev01-12_v1c.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Siberia Customized (with lakes)",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrobasins/customized_with_lakes/hybas_lake_si_lev01-12_v1c.zip",
+          "encodingFormat": "ZIP"
+        }
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://www.hydrosheds.org/products/hydrorivers",
+      "name": "HydroRIVERS",
+      "description": "HydroRIVERS represents a vectorized line network of all global rivers that have a catchment area of at least 10 km² or an average river flow of at least 0.1 m³/sec, or both. It has been extracted from the gridded HydroSHEDS core layers at 15 arc-second resolution, encompassing 8.5 million individual river reaches with an average length of 4.2 km, representing a total of 35.9 million km of rivers globally. It includes limited attribute information such as river reach length, distance from upstream headwaters and ocean outlet, river order, and an estimate of long-term average discharge, and is co-registered to the sub-basin of the HydroBASINS database.",
+      "keywords": "rivers, global, hydrography, river network, catchment area, river flow, geospatial",
+      "version": "v10",
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "Global",
+        "geo": {
+          "@type": "GeoShape",
+          "box": "-180 -90 180 90"
+        }
+      },
+      "license": "https://data.hydrosheds.org/file/technical-documentation/HydroSHEDS_TechDoc_v1_4.pdf",
+      "citation": "Lehner, B., Grill G. (2013). Global river hydrography and network routing: baseline data and new approaches to study the world’s large river systems. Hydrological Processes, 27(15): 2171–2186. https://doi.org/10.1002/hyp.9740",
+      "includedInDataCatalog": {
+        "@id": "https://www.hydrosheds.org/products#secondary-header"
+      },
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "name": "Global Geodatabase",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10.gdb.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Africa Geodatabase",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_af.gdb.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Arctic Geodatabase",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_ar.gdb.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Asia Geodatabase",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_as.gdb.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Australasia Geodatabase",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_au.gdb.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Europe and Middle East Geodatabase",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_eu.gdb.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Greenland Geodatabase",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_gr.gdb.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "North and Central America Geodatabase",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_na.gdb.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "South America Geodatabase",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_sa.gdb.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Siberia Geodatabase",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_si.gdb.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Global Shapefile",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_shp.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Africa Shapefile",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_af_shp.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Arctic Shapefile",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_ar_shp.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Asia Shapefile",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_as_shp.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Australasia Shapefile",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_au_shp.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Europe and Middle East Shapefile",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_eu_shp.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Greenland Shapefile",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_gr_shp.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "North and Central America Shapefile",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_na_shp.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "South America Shapefile",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_sa_shp.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Siberia Shapefile",
+          "contentUrl": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_si_shp.zip",
+          "encodingFormat": "ZIP"
+        }
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://www.hydrosheds.org/products/hydrolakes",
+      "name": "HydroLAKES",
+      "description": "HydroLAKES aims to provide the shoreline polygons of all global lakes with a surface area of at least 10 ha. It includes 1.4 million individual lakes or reservoirs, representing a total surface area of 2.67 million km², a total shoreline length of 7.2 million km, and a total storage volume of 181,900 km³. It includes limited attribute information such as surface area, shoreline length, and estimates of average depth, water volume, and residence time. Every lake is co-registered to a river reach of the HydroRIVERS dataset and a sub-basin of the HydroBASINS database.",
+      "keywords": "lakes, shoreline polygons, global coverage, lake attributes, hydro-environmental data",
+      "version": "v10",
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "Global",
+        "geo": {
+          "@type": "GeoShape",
+          "box": "-180 -90 180 90"
+        }
+      },
+      "license": "http://creativecommons.org/licenses/by/4.0/",
+      "citation": "Messager, M.L., Lehner, B., Grill, G., Nedeva, I., Schmitt, O. (2016). Estimating the volume and age of water stored in global lakes using a geo-statistical approach. Nature Communications, 7: 13603. DOI: https://doi.org/10.1038/ncomms13603",
+      "includedInDataCatalog": {
+        "@id": "https://www.hydrosheds.org/products#secondary-header"
+      },
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "name": "Lake Polygons Geodatabase",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_polys_v10.gdb.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Lake Pour Points Geodatabase",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_points_v10.gdb.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Lake Polygons Shapefile",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_polys_v10_shp.zip",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Lake Pour Points Shapefile",
+          "contentUrl": "https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_points_v10_shp.zip",
+          "encodingFormat": "ZIP"
+        }
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://www.hydrosheds.org/products/hydroatlas",
+      "name": "HydroATLAS",
+      "description": "HydroATLAS offers a global compendium of hydro-environmental characteristics for all sub-basins of HydroBASINS, all river reaches of HydroRIVERS, and all lake polygons of HydroLAKES. It is divided into three sub-datasets: BasinATLAS, RiverATLAS, and LakeATLAS, representing sub-basin delineations, river network, and lake shorelines, respectively. It contains 1.0 million sub-basins, 8.5 million river reaches, and 1.4 million lakes, with 56 hydro-environmental variables grouped into seven categories: hydrology, physiography, climate, land cover & use, soils & geology, and anthropogenic influences.",
+      "keywords": "hydro-environmental characteristics, sub-basins, river reaches, lakes, hydrology, physiography, climate, land cover, soils, geology, anthropogenic influences",
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "Global",
+        "geo": {
+          "@type": "GeoShape",
+          "box": "-180 -90 180 90"
+        }
+      },
+      "license": "http://creativecommons.org/licenses/by/4.0/",
+      "citation": "Linke, S., Lehner, B., Ouellet Dallaire, C., Ariwi, J., Grill, G., Anand, M., Beames, P., Burchard-Levine, V., Maxwell, S., Moidu, H., Tan, F., Thieme, M. (2019). Global hydro-environmental sub-basin and river reach characteristics at high spatial resolution. Scientific Data 6: 283. doi: https://doi.org/10.1038/s41597-019-0300-6; Lehner, B., Messager, M.L., Korver, M.C., Linke, S. (2022). Global hydro-environmental lake characteristics at high spatial resolution. Scientific Data 9: 351. doi: https://doi.org/10.1038/s41597-022-01425-z",
+      "includedInDataCatalog": {
+        "@id": "https://www.hydrosheds.org/products#secondary-header"
+      },
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "name": "Global BasinATLAS Geodatabase",
+          "contentUrl": "https://figshare.com/ndownloader/files/20082137",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Global BasinATLAS Shapefile",
+          "contentUrl": "https://figshare.com/ndownloader/files/20087237",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Global RiverATLAS Geodatabase",
+          "contentUrl": "https://figshare.com/ndownloader/files/20087321",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Global RiverATLAS Shapefile",
+          "contentUrl": "https://figshare.com/ndownloader/files/20087486",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Global LakeATLAS Geodatabase",
+          "contentUrl": "https://figshare.com/ndownloader/files/35959544",
+          "encodingFormat": "ZIP"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Global LakeATLAS Shapefile",
+          "contentUrl": "https://figshare.com/ndownloader/files/35959547",
+          "encodingFormat": "ZIP"
+        }
+      ]
+    }
+  ]
+}

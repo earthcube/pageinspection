@@ -47,8 +47,12 @@ async def main():
       # print(result.markdown)
   # r = example4Page(result.markdown)  # or example4Datapage
   r = example4Datapage(result.markdown)
-  print(r)
 
+  print("----------------")
+  print(r.model_dump_json(indent=2))
+
+  print("----------------")
+  print(r.model_dump())
 
 if __name__ == "__main__":
     asyncio.run(main())
